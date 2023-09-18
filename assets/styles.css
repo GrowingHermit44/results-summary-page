@@ -1,0 +1,313 @@
+/*-----------------------------------*\
+  #RESET
+\*-----------------------------------*/
+
+  /*
+    1. Use a more-intuitive box-sizing model.
+  */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    5. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    6. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    7. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+
+
+
+/*-----------------------------------*\
+  #style.css
+\*-----------------------------------*/
+
+:root{
+
+/* Primary colors */
+
+  --clr-primary-100:hsl(0, 100%, 67%);
+  --clr-primary-200:hsl(39, 100%, 56%);
+  --clr-primary-300:hsl(166, 100%, 37%);
+  --clr-primary-400:hsl(234, 85%, 45%);
+
+/* Gradient colors */
+
+  --clr-gradient-background-100:hsl(252, 100%, 67%);
+  --clr-gradient-background-200:hsl(241, 81%, 54%);
+  --clr-gradient-circle-300:hsla(256, 72%, 46%, 1);
+  --clr-gradient-circle-400:hsla(241, 72%, 46%, 0);
+
+/* neutral colors */
+
+  --clr-neutral-100:hsl(0, 0%, 100%);
+  --clr-neutral-200:hsl(221, 100%, 96%);
+  --clr-neutral-300:hsl(241, 100%, 89%);
+  --clr-neutral-400:hsl(224, 30%, 27%);
+
+/* Fonts */
+
+--ff-base: 'Hanken Grotesk', sans-serif;
+
+--fw-medium:500;
+--fw-bold:700;
+--fw-extra-bold:800;
+
+--fs-p:18px;
+
+}
+
+
+/*-----------------------------------*\
+  #CUSTOM PROPERTY
+\*-----------------------------------*/
+
+*{
+
+  font-family: var(--ff-base);
+  font-size: var(--fs-p);
+  font-weight: var(--fw-bold);
+  color: var(--clr-neutral-300);
+  text-wrap: wrap;
+}
+
+
+
+/*-----------------------------------*\
+  #SUMMARY COMPONENT
+\*-----------------------------------*/
+
+.card{
+  display: grid;
+  /* height: 100vh; */
+  min-width: 375px;
+  max-width: 750px;
+  align-self: center;
+  justify-self: center;
+  margin: auto;
+  padding-bottom: 10%;
+}
+
+.result__summary{
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-image: linear-gradient(180deg,var(--clr-gradient-background-100),var(--clr-gradient-background-200));
+  height: 45vh;
+  padding: 0 10%;
+  border-bottom-left-radius: 10%;
+  border-bottom-right-radius: 10%;
+  text-align: center;
+
+}
+
+.result__title{
+
+  padding-top: 30px;
+  padding-bottom: 10px;
+  font-weight: var(--fw-bold);
+
+}
+
+
+.result{
+  border:none;
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(var(--clr-gradient-circle-300),var(--clr-gradient-circle-400));
+  border-radius: 50%;
+  text-align: center;
+  margin-bottom: 10px;
+  
+}
+
+.result p{
+
+font-size: 3rem;
+font-weight: var(--fw-extra-bold);
+color: var(--clr-neutral-100);
+}
+
+.rating{
+
+  font-size: 1.5rem;
+  color: var(--clr-neutral-100);
+}
+
+.summary__description{
+  font-size: 0.95rem;
+  padding-bottom: 50px;
+  line-height: 1.2rem;
+}
+
+.summary__stats{
+  display:flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 10%;
+  
+}
+
+h1{
+
+  padding-left: 10%;
+  padding-top: 5%;
+  padding-bottom: 3%;
+  color: var(--clr-neutral-400);
+  font-weight: var(--fw-extra-bold);
+  font-size: 1.1rem;
+}
+
+#stat__bar{
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  /* background-color: var(--clr-primary-300); */
+  margin: 4% 0px;
+  border-radius: .6rem;
+  padding: 0 5%;
+
+
+}
+
+.reaction{
+  color: hsla(224, 30%, 27%,50%);
+  background-color: hsla(0, 100%, 67%,7%);
+  
+}
+
+.memory{
+  color: hsla(224, 30%, 27%,50%);
+  background-color: hsla(39, 100%, 56%, 7%);
+}
+
+.verbal{
+  color: hsla(224, 30%, 27%,50%);
+  background-color: hsla(166, 100%, 37%, 7%);
+}
+
+.visual{
+  color: hsla(224, 30%, 27%,50%);
+  background-color: hsla(234, 85%, 45%,7%);
+}
+
+.category__reaction{
+
+  padding-right: 33%;
+  color: var(--clr-primary-100);
+}
+
+.category__memory{
+
+  padding-right: 33%;
+  color: var(--clr-primary-200);
+  
+}
+
+.category__verbal{
+
+  padding-right: 33%;
+  color: var(--clr-primary-300);
+}
+
+.category__visual{
+
+  padding-right: 33%;
+  color: var(--clr-primary-400);
+}
+
+.points{
+
+  color: var(--clr-neutral-400);
+}
+
+.continue{
+
+  background-color: var(--clr-neutral-400);
+  color: var(--clr-neutral-100);
+  border: none;
+  padding: 5% 0px;
+  border-radius: 30px;
+  margin-top: 4%;
+  cursor: pointer;
+}
+
+.continue:is(:hover,:focus)
+  {
+    background-image: linear-gradient(180deg,var(--clr-gradient-background-100),var(--clr-gradient-background-200));
+  }
+
+
+.attribution { font-size: 8px; text-align: center; width: 100%; margin-top: 5%; }
+.attribution a { color: hsl(228, 45%, 44%); font-size: 8px;}
+
+
+
+/*-----------------------------------*\
+  #MEDIA QUERIES
+\*-----------------------------------*/
+
+@media (min-width:600px) {
+
+  .card{
+    height: 100vh;
+    grid-template-columns: 1fr 1fr ;
+    place-content: center;
+    padding-bottom: 0;
+    
+  }
+
+  .result__summary{
+    
+    min-height: 50vh;
+    border-radius: 10%;
+  }
+  .continue{margin-bottom: 10%;}
+
+  .summary__stats{
+    border-radius: 10%;
+    /* padding-bottom: 10%; */
+    box-shadow: 10px 10px 15px 0px hsla(252, 100%, 67% ,13%);
+    border-bottom-left-radius: 0;
+    
+  }
+
+  .attribution{width: 100%;
+    
+  }
+
+
+}
